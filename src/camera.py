@@ -132,6 +132,13 @@ class Camera:
                 name = match.group(2).strip()
                 device_map[idx] = name
 
+        # Prefer main iPhone Continuity Camera and avoid Desk View.
+        for name in device_map.values():
+            lowered = name.lower()
+            if "iphone camera" in lowered and "desk view" not in lowered:
+                return name
+
+        # Fallback to explicit index if no preferred iPhone camera was found.
         return device_map.get(device)
 
     def read_frame(self):
