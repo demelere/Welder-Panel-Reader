@@ -1,0 +1,21 @@
+camera_device: 3
+width: 1280
+height: 720
+
+roi_amps:
+  x: 0.60
+  y: 0.05
+  w: 0.30
+  h: 0.20
+
+roi_volts:
+  x: 0.35
+  y: 0.05
+  w: 0.25
+  h: 0.20
+
+inference_hz: 8
+confidence_threshold: 0.6
+
+amps_range: [0, 500]
+volts_range: [0, 50]
